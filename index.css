@@ -1,31 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
 
-body{
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.borda, .borda2{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    background-color: #353535;
+    box-sizing: border-box;
+    border-radius: 17px 0px 17px 0px;
+}
+
+
+.borda2{
+    border-radius: 17px;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     align-items: start;
     justify-content: space-between;
-    padding: 2%;
-    flex-direction: row;
+    padding: 3%;
     background-image: url(/imgs/fundo.png);
-    background-size: auto;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
 .infos{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    width: 25%;
+    width: 20%;
     height: 100%;
-    padding: 2%;
+    box-sizing: border-box;
 }
 
 .logo{
     color: #D9D9D9;
     font-family: 'Montserrat';
-    font-size: 16px;
+    font-size: 1em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -34,7 +58,7 @@ body{
 .logo2{
     color: #058BA2;
     font-family: 'Montserrat', sans-serif;
-    font-size: 85px;
+    font-size: 4em;
     font-style: normal;
     font-weight: 900;
     line-height: 82.331%;
@@ -50,13 +74,22 @@ body{
 }
 
 .nome, .nome2{
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 30px;
     border: 1px solid #FFF;
     background: rgba(165, 165, 165, 0.30);
     box-shadow: 4px 4px 17.9px 0px rgba(0, 0, 0, 0.04);
     backdrop-filter: blur(25px);
+}
+
+.nome{
+    height: 40%;
+}
+
+.nome2{
+    height: 50%;
 }
 
 .dives{
@@ -65,50 +98,135 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
 }
 
 .video{
     display: flex;
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 17px;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75%;
     height: 100%;
-    background-image: url(/imgs/astronauta.mp4);
-    overflow: hidden;
+    padding: 2%;
+    padding-bottom: 0;
+    padding-right: 0;
+    box-sizing: border-box;
 }
 
+.video video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra o contêiner sem distorcer */
+    z-index: 1; /* Coloca o vídeo atrás do conteúdo da div */
+    filter: brightness(0.7);
+    transition: 1s filter;
+}
 .video{
     color: white;
 }
 
-.video video{
-    width: 70%;
-    height: 95%;
-    border-radius: 33px;
-    object-fit: cover;
-    position: fixed;
-    z-index: 0;
-}
-
 .top{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     z-index: 1;
     align-items: start;
     justify-content: space-between;
 }
 
+.redes{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 70%;
+}
+
+
+.empresas{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 30%;
+    overflow-x: auto; /* Habilita a rolagem horizontal */
+    white-space: nowrap;
+    padding: 1%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 33px;
+    overflow-y: hidden;
+}
+
+
+.scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.scrolling-wrapper img {
+    flex: 0 0 33.33%; /* cada imagem ocupa um terço da largura do contêiner */
+}
+
+/* Estilo para as setas */
+.setap {
+    cursor: pointer;
+    user-select: none;
+    width: 2%; /* Ajuste conforme necessário */
+}
+
+.setap{
+    filter: grayscale(100%) brightness(0%);
+}
+
+.setap1{
+    transform: scale(-1);
+}
+
+.empresas img{
+    width: 20%;
+    height: 100%;
+}
+
 .middle{
     display: flex;
+    justify-content: space-between;
     flex: row;
-    height: 50%;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .cards{
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+    height: 90%;
 }
 
 .card1, .card2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45%;
+    width: 100%;
     border-radius: 30px;
     border: 1px solid #FFF;
     background: linear-gradient(103deg, rgba(210, 210, 210, 0.35) -20.67%, rgba(217, 217, 217, 0.03) 117.08%);
@@ -117,64 +235,90 @@ body{
     color: #F1EFE7;
     text-align: center;
     font-family: 'Montserrat';
-    font-size: 32px;
+    font-size: 1.2em;
     font-style: normal;
     font-weight: 200;
     line-height: normal;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.card1, .card2 :hover{
 }
 
 .sobre{
+    opacity: 0;
+    width: 60%;
     color: #FFF;
     font-family: 'Montserrat';
-    font-size: 20px;
+    font-size: 1em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-align: justify;
+    transition: 1s ease;
 }
 
 .down{
-    z-index: 1;
     display: flex;
     width: 100%;
     flex-direction: row;
-    align-items: baseline;
-    justify-content: space-around;
+    align-items: end;
+    justify-content: space-between;
 }
 
 .data{
     color: #FFF;
     font-family: 'Orbitron';
-    font-size: 48px;
+    font-size: 3em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.where{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    box-sizing: border-box;
 }
 
 .inscricao{
     background-color: white;
     display: flex;
     flex: row;
-    width: 50%;
+    width: 100%;
+    height: 100%;
     padding: 2%;
-    align-items: center;
     justify-content: start;
+    align-items: center;
     border: 0;
     border-radius: 17px;
-    transition: background-color 0.3s;
+    transition: 0.3s background-color, 0.3s color;
     cursor: pointer;
+    color: #000;
+
 }
 
 .inscricao:hover{
     background-color: #E78F2A;
+    color: white;
 }
 
 .botaotexto{
-    color: #000;
+    width: 90%;
+    height: 100%;
     font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
+    font-size: 2em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-align: center;
+    text-wrap: nowrap;
 }
 
 .seta{

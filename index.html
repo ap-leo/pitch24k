@@ -1,68 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
-    <div class="infos">
-        <div class="nome">
-            <text class="logo">7°edição</text>
-            <text class="logo2">PITCH<br>DAY</text>
-            <text class="logo3">UFPR</text>
-        </div>
-        <div class="nome2">
-            <text>PITCH<br>DAY</text>
-        </div>
-    </div>
-
-    <div class="video">
-        <video autoplay muted loop id="background-video">
-            <source src="/imgs/astronauta.mp4" type="video/mp4">
-        </video>
-        <div class="dives">
-            <div class="top">
-                <div class="redes">
-                    <img src="/imgs/Instagram.png">
-                    <img src="/imgs/LinkedIn.png">
-                </div>
-
-                <div class="empresas">
-
-                </div>
-        </div>
-
-        <div class="middle">
-            <div class="sobre">
-                <text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</text>
+    <div class="conteudo">
+        <div class="infos">
+            <div class="nome">
+                <text class="logo">7°edição</text>
+                <text class="logo2">PITCH<br>DAY</text>
+                <text class="logo3">UFPR</text>
             </div>
-            <div class="cards">
-                <div class="card1">
-                    <text>SOBRE O<br>PITCHDAY<br>UFPR</text>
-                </div>
-                <div class="card2">
-                    <text>EDIÇÕES<br>PASSADAS</text>
-                </div>
+            <div class="nome2">
+                <text>PITCH<br>DAY</text>
             </div>
         </div>
 
-        <div class="down">
-            <text class="data">09/11</text>
-            <img src="/imgs/bode.png">
+        <div class="video">
+            <video autoplay muted loop id="background-video">
+                <source src="/imgs/astronauta.mp4" type="video/mp4">
+            </video>
+            <div class="dives">
 
-            <button class="inscricao">
-                <div class="seta">
-                    <img src="/imgs/seta.png">
-                </div>
-                <div class="botaotexto">
-                    <text>INSCREVA SUA EQUIPE</text>
-                </div>
-            </button>
+                <div class="top">
+                    <div class="redes">
+                        <img class="borda2" src="/imgs/Instagram.png">
+                        <img class="borda2" src="/imgs/LinkedIn.png">
+                    </div>
 
-        </div>
+                    <div class="empresas borda2">
+                        <img class="setap setap1" src="/imgs/seta.png" alt="Seta Esquerda">
+                        <div class="scrolling-wrapper">
+                            <img src="/imgs/instaufpr 2.png" alt="Logo">
+                            <img src="/imgs/instaufpr 2.png" alt="Logo">
+                            <img src="/imgs/instaufpr 2.png" alt="Logo">
+                            <img src="/imgs/instaufpr 2.png" alt="Logo">
+                            <img src="/imgs/instaufpr 2.png" alt="Logo">
+                        </div>
+                        <img class="setap setap2" src="/imgs/seta.png" alt="Seta Direita">
+                    </div>
+                </div>
+
+                <div class="middle">
+                    <div class="sobre" id="sobre">
+                        <text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</text>
+                    </div>
+                    <div class="cards">
+                        <div class="card1" id="botaoSobre">
+                            <text>SOBRE O<br>PITCHDAY<br>UFPR</text>
+                        </div>
+                        <div class="card2">
+                            <text>EDIÇÕES<br>PASSADAS</text>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="down">
+                    <div class="where">
+                        <text class="data">09/11</text>
+                        <img src="/imgs/bode.png">
+                    </div>
+
+                    <div class="borda">
+                        <button class="inscricao">
+                            <div class="seta">
+                                <img src="/imgs/seta.png">
+                            </div>
+                            <div class="botaotexto">
+                                <text>INSCREVA SUA EQUIPE</text>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="/index.js"></script>
 </body>
+
 </html>
