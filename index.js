@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imgWidth = scrollingWrapper.querySelector('img').offsetWidth;
     const margin = parseInt(window.getComputedStyle(scrollingWrapper.querySelector('img')).marginRight);
 
-    const scrollAmount = imgWidth + margin; // Ajuste a quantidade de rolagem para uma imagem
+    const scrollAmount = imgWidth + margin; // rolagem para uma imagem
 
     setaEsquerda.addEventListener('click', () => {
         scrollingWrapper.scrollBy({
@@ -41,3 +41,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+function calcularDiasFaltando(dataFutura) {
+    // Cria um objeto Date para a data futura
+    const dataFuturaObj = new Date(dataFutura);
+
+    // Cria um objeto Date para a data atual
+    const hoje = new Date();
+
+    // Calcula a diferença em milissegundos
+    const diferencaMs = dataFuturaObj - hoje;
+
+    // Converte a diferença de milissegundos para dias
+    const umDiaMs = 24 * 60 * 60 * 1000;
+    const diasFaltando = Math.ceil(diferencaMs / umDiaMs);
+
+    return diasFaltando;
+}
+
+const dataFutura = '2024-09-11';
+var aux = calcularDiasFaltando(dataFutura)
+const dias = 100 - aux;
+var bat = document.getElementById('bateria');
+
+bateria.style.height = dias + '%';
+
+const dia = document.getElementById('dias');
+dia.textContent = 'Faltam ' + aux + ' dias';
+
+const passada = document.getElementById('passada')
+const video = document.getElementById('video')
+const fotos = document.getElementById('fotos')
+
+passada.addEventListener('click', function(){
+    video.classList.add('fade-out');
+    setTimeout(function() {
+        video.style.display = 'none';
+        fotos.style.display = 'flex';
+    }, 1000); 
+
+})
