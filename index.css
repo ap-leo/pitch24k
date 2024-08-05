@@ -7,13 +7,14 @@ html, body {
     margin: 0;
 }
 
+
 .borda, .borda2, .borda3{
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2%;
-    background-color: #353535;
     box-sizing: border-box;
+    background-color: #353535;
     border-radius: 17px 0px 17px 0px;
 }
 
@@ -48,25 +49,6 @@ html, body {
     width: 20%;
     height: 100%;
     box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-    .conteudo{
-        flex-direction: column;
-        align-items: center;
-
-    }
-    .infos {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%; 
-        height: auto;
-    }
-
-    .nome, .nome2{
-        width: 30%;
-    }
 }
 
 .logo{
@@ -182,26 +164,61 @@ html, body {
     padding-bottom: 0;
     padding-right: 0;
     box-sizing: border-box;
+    clip-path: url(imgs/corte1.svg);
 }
 
-.teste{
+.grade{
+    width: 75%;
+    height: 100%;
+    padding: 2%;
+    padding-bottom: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    border-radius: 17px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; 
+    transition: 1s filter;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.grade :hover{
+    transform: scale(1.1);
+}
+
+.voltar{
     position: absolute;
-    background-color: rgb(255, 255, 255);
-    height: 100px;
-    width: 100px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 8%;
+    right: 1%;
     z-index: 2;
-    right: 30%;
-    mix-blend-mode:difference;
+    height: 10%;
+    border-radius: 50%;
+    width: 5%;
+    background-color: #058BA2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: rotate(180deg);
+    cursor: pointer;
 }
-#video {
 
-    transition: opacity 1s ease-out;
+#video, #grade {
+    transition: opacity 1s ease-in-out;
 }
 
 #video.fade-out {
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 100%);
     -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 0%);
-    transition: opacity 1s ease-out;
+    transition: opacity 1s ease-in-out;
     opacity: 0;
 }
 
@@ -216,20 +233,24 @@ html, body {
     z-index: 1;
     filter: brightness(0.7);
     transition: 1s filter;
+    clip-path: url(#myClipPath); /* Aplica o SVG de recorte */
 }
 .video{
     color: white;
 }
 
 .top{
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
     width: 100%;
     z-index: 1;
 }
 
 .redes{
+    top: 10%;
     display: flex;
     width: 20%;
     justify-content: space-around;
@@ -304,6 +325,7 @@ html, body {
 }
 
 .middle{
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex: row;
@@ -343,9 +365,6 @@ html, body {
     cursor: pointer;
 }
 
-.card1, .card2 :hover{
-}
-
 .sobre{
     opacity: 0;
     width: 60%;
@@ -370,7 +389,7 @@ html, body {
 .data{
     color: #FFF;
     font-family: 'Orbitron';
-    font-size: 3em;
+    font-size: 4vw;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -405,8 +424,8 @@ html, body {
 }
 
 .inscricao:hover{
-    background-color: #E78F2A;
-    color: white;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 .botaotexto{
@@ -430,4 +449,102 @@ html, body {
     background-color: black;
     border-radius: 15px;
     width: 15%;
+}
+
+
+@media (max-width: 720px) {
+    .conteudo{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .infos {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; 
+        height: 30%;
+    }
+
+    .nome, .nome2{
+        width: 45%;
+        height: 90%;
+    }
+
+    .primeiro{
+        font-size: 0.7em;
+    }
+
+    .video{
+        width: 100%;
+        height: 100%;
+    }
+
+    .cards{
+        width: 25%;
+        height: 100%;
+    }
+    
+    .card1, .card2{
+        height: 45%;
+        width: 100%;
+        font-size: 1.1em;
+    }
+
+    .dives{
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .middle{
+        height: 50%;
+        width: 100%;
+    }
+
+    .sobre{
+        font-size: 0.8em;
+    }
+
+    
+    .where{
+        width: 20%;
+        height: 100%;
+        padding: 2%;
+    }
+
+    .where img{
+        height: 80%;
+    }
+    
+    .inscricao{
+        width: 100%;
+        height: 100%;
+        padding: 2%;
+    }
+    
+    .botaotexto{
+        width: 80%;
+        height: 100%;
+    }
+    
+    .botaotexto text{
+        font-size: 2.7vw;
+    }
+    
+    .seta{
+        width: 15%;
+    }
+
+    .cima{
+        height: 20%;
+        top: 4%;
+        right: 12vw;
+        z-index: 5;
+        font-size: 1em;
+        line-height: normal;
+    }
 }

@@ -72,13 +72,38 @@ dia.textContent = 'Faltam ' + aux + ' dias';
 
 const passada = document.getElementById('passada')
 const video = document.getElementById('video')
-const fotos = document.getElementById('fotos')
+const grade = document.getElementById('grade')
+const fotos = document.querySelector('.grid-item');
+const voltar = document.getElementById('voltar')
+
+var aux = 1;
+var local = 'p';
+const gridItems = document.querySelectorAll('.grid-item');
+
+gridItems.forEach((item, index) => {
+    item.style.backgroundImage = `url(imgs/${local}${aux}.jpeg)`;
+    item.style.backgroundSize = 'cover';
+    item.style.backgroundPosition = 'center';
+    aux++;
+});
+
+
 
 passada.addEventListener('click', function(){
     video.classList.add('fade-out');
     setTimeout(function() {
         video.style.display = 'none';
-        fotos.style.display = 'flex';
+        grade.style.display = 'grid';
+        voltar.style.display = 'flex';
     }, 1000); 
+})
 
+voltar.addEventListener('click', function(){
+    grade.style.opacity = '0';
+    setTimeout(function() {
+        grade.style.display = 'none';
+        video.style.display = 'flex';
+        voltar.style.display = 'none';
+        video.style.opacity = 1;
+    }, 1000); 
 })
