@@ -244,13 +244,12 @@ html, body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    align-items: center;
+    align-items: top;
     width: 100%;
     z-index: 1;
 }
 
 .redes{
-    top: 10%;
     display: flex;
     width: 20%;
     justify-content: space-around;
@@ -277,7 +276,6 @@ html, body {
     width: 30%;
     overflow-x: auto; /* rolagem horizontal */
     white-space: nowrap;
-    padding: 1%;
     box-sizing: border-box;
     background-color: white;
     border-radius: 33px;
@@ -292,7 +290,7 @@ html, body {
     scroll-behavior: smooth;
     flex-wrap: nowrap;
     width: 100%;
-    padding: 2%;
+    padding: 5%;
     scrollbar-width: none;
 }
 
@@ -309,6 +307,7 @@ html, body {
     cursor: pointer;
     user-select: none;
     width: 2%; /* Ajuste conforme necessário */
+    display: flex;    
 }
 
 .setap{
